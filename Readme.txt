@@ -2,7 +2,7 @@
 
 Step-1: 
 	
-	Download workspace from GitHub “https://github.com/MuthuKumar/Automation”
+	Download workspace from GitHub “https://github.com/mkumaar90t/master_calculator_muthu”
 
 Step-2:
 
