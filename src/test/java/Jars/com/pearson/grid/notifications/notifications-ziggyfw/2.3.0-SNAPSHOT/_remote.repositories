@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:15:23 IST 2020
+notifications-ziggyfw-2.3.0-SNAPSHOT.pom>=
+notifications-ziggyfw-2.3.0-SNAPSHOT.jar>=
+notifications-ziggyfw-2.3.0-SNAPSHOT-sources.jar>=

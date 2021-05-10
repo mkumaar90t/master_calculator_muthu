@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:09:05 IST 2020
+maven-install-plugin-2.4.pom>Pearson-Nexus-Dependencies=
+maven-install-plugin-2.4.jar>central=
+maven-install-plugin-2.4.jar>Pearson-Nexus-Dependencies=
+maven-install-plugin-2.4.pom>central=

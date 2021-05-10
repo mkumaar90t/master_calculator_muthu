@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:10:35 IST 2020
+byte-buddy-1.8.15.jar>Pearson-Nexus-Dependencies=
+byte-buddy-1.8.15.pom>central=
+byte-buddy-1.8.15.jar>central=
+byte-buddy-1.8.15.pom>Pearson-Nexus-Dependencies=

@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:10:10 IST 2020
+junit-3.8.1.jar>Pearson-Nexus-Dependencies=
+junit-3.8.1.jar>central=
+junit-3.8.1.pom>central=
+junit-3.8.1.pom>Pearson-Nexus-Dependencies=

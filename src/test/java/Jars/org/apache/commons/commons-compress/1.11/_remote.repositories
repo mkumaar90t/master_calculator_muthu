@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:11:57 IST 2020
+commons-compress-1.11.jar>central=
+commons-compress-1.11.pom>central=
+commons-compress-1.11.pom>Pearson-Nexus-Dependencies=
+commons-compress-1.11.jar>Pearson-Nexus-Dependencies=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Aug 31 14:26:19 IST 2020
+groovy-2.4.12.jar>MavenCentral=
+groovy-2.4.12.jar>Pearson-Nexus-Dependencies=
+groovy-2.4.12.pom>Pearson-Nexus-Dependencies=

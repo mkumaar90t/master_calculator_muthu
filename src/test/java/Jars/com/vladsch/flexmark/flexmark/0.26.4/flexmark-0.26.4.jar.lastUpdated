@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Aug 31 14:26:00 IST 2020
+https\://repo.maven.apache.org/maven2/.lastUpdated=1598864160358
+https\://nexus.releng.pearsondev.com/content/repositories/releases/.error=
+https\://nexus.releng.pearsondev.com/content/repositories/releases/.lastUpdated=1598864155805
+e0488e9d6dfe68c5b464e75d55eb00c71e52f931@default-Pearson-Nexus-Dependencies-https\://nexus.releng.pearsondev.com/content/groups/all-deps/.lastUpdated=1598864152755
+https\://nexus.releng.pearsondev.com/content/groups/all-deps/.error=Could not transfer artifact com.vladsch.flexmark\:flexmark\:jar\:0.26.4 from/to Pearson-Nexus-Dependencies (https\://nexus.releng.pearsondev.com/content/groups/all-deps)\: C\:\\Users\\766767\\.m2\\repository\\com\\vladsch\\flexmark\\flexmark\\0.26.4\\flexmark-0.26.4.jar.part.lock (The process cannot access the file because it is being used by another process)

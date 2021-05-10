@@ -1,0 +1,40 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.pearson.lt</groupId>
+    <artifactId>base-pom</artifactId>
+    <version>2.0.0</version>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
+    <scm>
+        <connection>scm:svn:http://subversion.pearsoncmg.com/data/sqedev/Release_Engineering/tags/base-pom-2.0.0</connection>
+        <developerConnection>scm:svn:http://subversion.pearsoncmg.com/data/sqedev/Release_Engineering/tags/base-pom-2.0.0</developerConnection>
+        <url>http://fisheye.pearsoncmg.com/browse/SQE_Dashboard/Release_Engineering/tags/base-pom-2.0.0</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>Releases</id>
+            <name>Pearson-Nexus-Releases</name>
+            <url>https://devops-tools.pearson.com/nexus-master/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+        	<id>Snapshots</id>
+            <name>Pearson-Nexus-Snapshots</name>
+            <url>https://devops-tools.pearson.com/nexus-deps/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-http</artifactId>
+                <version>2.1</version>
+            </extension>
+        </extensions>
+    </build>
+
+</project>

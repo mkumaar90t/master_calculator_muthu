@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:10:33 IST 2020
+aws-java-sdk-sqs-1.11.172.jar>central=
+aws-java-sdk-sqs-1.11.172.jar>Pearson-Nexus-Dependencies=
+aws-java-sdk-sqs-1.11.172.pom>central=
+aws-java-sdk-sqs-1.11.172.pom>Pearson-Nexus-Dependencies=

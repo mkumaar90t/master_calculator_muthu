@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:10:33 IST 2020
+guava-23.6-jre.jar>central=
+guava-23.6-jre.jar>Pearson-Nexus-Dependencies=
+guava-23.6-jre.pom>central=
+guava-23.6-jre.pom>Pearson-Nexus-Dependencies=

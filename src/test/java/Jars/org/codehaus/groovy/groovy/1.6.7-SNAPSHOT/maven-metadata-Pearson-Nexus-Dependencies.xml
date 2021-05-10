@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.codehaus.groovy</groupId>
+  <artifactId>groovy</artifactId>
+  <version>1.6.7-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20091201.192910</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20091201192912</lastUpdated>
+  </versioning>
+</metadata>

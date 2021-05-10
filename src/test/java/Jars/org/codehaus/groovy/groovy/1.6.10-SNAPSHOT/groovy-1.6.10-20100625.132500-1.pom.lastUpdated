@@ -1,0 +1,8 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Sep 17 17:30:15 IST 2020
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1600343668271
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+https\://nexus.releng.pearsondev.com/content/groups/all-deps/.lastUpdated=1600344014279
+https\://nexus.releng.pearsondev.com/content/repositories/releases/.error=
+https\://nexus.releng.pearsondev.com/content/repositories/releases/.lastUpdated=1600344015865
+https\://nexus.releng.pearsondev.com/content/groups/all-deps/.error=

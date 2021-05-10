@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>ALMListenerAndUpload</name>
+
+    <parent>
+        <groupId>com.pearson.lt</groupId>
+        <artifactId>javabuild</artifactId>
+        <version>2.0.0</version>
+    </parent>
+
+    <groupId>com.pearson.qa.alm</groupId>
+    <artifactId>ALMListenerAndUpload</artifactId>
+    <version>1.2</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <distributionManagement>
+        <site>
+            <id>apidocs-site</id>
+            <url>ftp://apidocs.pd-cloud.com/home/javadoc_builder/ftp/apidocs/${project.artifactId}/${project.version}</url>
+        </site>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.2</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <configfiles>${environmentconfig}</configfiles>
+                    </systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${project.build.testOutputDirectory}/${suite}.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <forkMode>never</forkMode>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+                <version>2.9</version>
+            </extension>
+        </extensions>
+
+        <testResources>
+            <testResource>
+                <directory>src/test/resources/environment-configs</directory>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources/testng-configs</directory>
+            </testResource>
+        </testResources>
+
+    </build>
+
+    <profiles>
+        <profile>
+            <id>env-default</id>
+            <activation>
+                <property>
+                    <name>!env</name>
+                </property>
+            </activation>
+            <properties>
+                <environmentconfig>dev-settings.xml</environmentconfig>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>env-qa</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>qa</value>
+                </property>
+            </activation>
+            <properties>
+                <env>qa</env>
+                <environmentconfig>${env}-settings.xml</environmentconfig>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>env-dev</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>dev</value>
+                </property>
+            </activation>
+            <properties>
+                <env>dev</env>
+                <environmentconfig>${env}-settings.xml</environmentconfig>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>env-stg</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>stg</value>
+                </property>
+            </activation>
+            <properties>
+                <env>stg</env>
+                <environmentconfig>${env}-settings.xml</environmentconfig>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>env-prod</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>prd</value>
+                </property>
+            </activation>
+            <properties>
+                <env>prd</env>
+                <environmentconfig>${env}-settings.xml</environmentconfig>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>suite-default</id>
+            <activation>
+                <property>
+                    <name>!suite</name>
+                </property>
+            </activation>
+            <properties>
+                <suite>service-tests</suite>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.pearson.qa.common</groupId>
+            <artifactId>ziggyfw</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.pearson.qa.oauth</groupId>
+            <artifactId>oauth-ziggyfw</artifactId>
+            <version>1.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.pearson.qa.common</groupId>
+                    <artifactId>ziggyfw</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+</project>

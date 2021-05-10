@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 10 16:21:22 IST 2021
+plexus-archiver-1.0.jar>central=
+plexus-archiver-1.0.jar>Pearson-Nexus-Dependencies=
+plexus-archiver-1.0.pom>Pearson-Nexus-Dependencies=
+plexus-archiver-1.0.pom>central=

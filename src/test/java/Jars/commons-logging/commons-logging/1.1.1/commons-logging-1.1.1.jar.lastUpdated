@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 23 19:08:57 IST 2020
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1598862256806
+https\://nexus.releng.pearsondev.com/content/groups/all-deps/.lastUpdated=1606138737719
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact commons-logging\:commons-logging\:jar\:1.1.1 from/to central (https\://repo.maven.apache.org/maven2)\: C\:\\Users\\766767\\.m2\\repository\\commons-logging\\commons-logging\\1.1.1\\commons-logging-1.1.1.jar.part.lock (The process cannot access the file because it is being used by another process)

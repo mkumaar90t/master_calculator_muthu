@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.pearson.ltg.alto</groupId>
+    <artifactId>base</artifactId>
+    <version>2.5.0</version>
+  </parent>
+
+  <groupId>com.pearson.pla</groupId>
+  <artifactId>engagement-engine-domain</artifactId>
+  <version>1.11.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>engagement-engine-domain</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jackson.version>2.8.11</jackson.version>
+    <test.coverage.lines>40%</test.coverage.lines>
+    <test.coverage.methods>40%</test.coverage.methods>
+    <test.coverage.conditionals>9%</test.coverage.conditionals>
+    <testsupport.version>1.9.0-SNAPSHOT</testsupport.version>
+    <testsupport-annotations.version>1.2.0-SNAPSHOT</testsupport-annotations.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.pearson.pla.testsupport</groupId>
+      <artifactId>testsupport-annotations</artifactId>
+      <version>${testsupport-annotations.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+		<!-- Test Dependencies -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.pearson.pla.testsupport</groupId>
+      <artifactId>testsupport</artifactId>
+      <version>${testsupport.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jsonschema2pojo</groupId>
+        <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+        <version>1.0.0</version>
+        <configuration>
+          <sourceDirectory>${basedir}/schema</sourceDirectory>
+          <targetPackage>generated</targetPackage>
+          <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+          <targetVersion>1.8</targetVersion>
+          <annotationStyle>jackson2</annotationStyle>
+          <dateType>java.time.Instant</dateType>
+          <dateTimeType>java.time.Instant</dateTimeType>
+          <timeType>java.time.Instant</timeType>
+          <excludes>
+            <exclude>.gitignore</exclude>
+          </excludes>
+        </configuration>
+        <!-- <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions> -->
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+<!--       <plugin>
+        <groupId>org.openclover</groupId>
+        <artifactId>clover-maven-plugin</artifactId>
+      </plugin>
+ -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <log4j.configuration>log4j-console.xml</log4j.configuration>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

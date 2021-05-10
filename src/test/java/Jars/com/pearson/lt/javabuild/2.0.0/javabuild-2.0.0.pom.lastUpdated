@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Aug 31 13:55:20 IST 2020
+https\://repo.maven.apache.org/maven2/.lastUpdated=1598861591463
+https\://nexus.releng.pearsondev.com/repositories/releases/.lastUpdated=1598861695029
+https\://nexus.releng.pearsondev.com/content/groups/all-deps/.lastUpdated=1598862320714
+https\://nexus.releng.pearsondev.com/repositories/releases/.error=
+https\://nexus.releng.pearsondev.com/groups/all-deps/.error=
+https\://nexus.releng.pearsondev.com/groups/all-deps/.lastUpdated=1598861693191
+https\://repo.maven.apache.org/maven2/.error=

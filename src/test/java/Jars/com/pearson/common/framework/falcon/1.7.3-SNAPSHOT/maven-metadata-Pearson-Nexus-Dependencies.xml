@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.pearson.common.framework</groupId>
+  <artifactId>falcon</artifactId>
+  <version>1.7.3-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20201104.083117</timestamp>
+      <buildNumber>3</buildNumber>
+    </snapshot>
+    <lastUpdated>20201104083117</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.7.3-20201104.083117-3</value>
+        <updated>20201104083117</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

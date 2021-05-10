@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 10 16:23:13 IST 2021
+servlet-api-2.5.jar>Pearson-Nexus-Dependencies=
+servlet-api-2.5.pom>central=
+servlet-api-2.5.jar>central=
+servlet-api-2.5.pom>Pearson-Nexus-Dependencies=

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.pearson.ed.ltg.piam</groupId>
+        <artifactId>super-pom-base</artifactId>
+        <version>3.21.0</version>
+	    <relativePath></relativePath>
+    </parent>
+    <version>3.21.0</version>
+    <groupId>com.pearson.ed.ltg.piam</groupId>
+    <artifactId>commons-external</artifactId>
+    <packaging>jar</packaging>
+    <name>PIAM Commons - Commons-External</name>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <!--  datasecure dependency -->
+            <groupId>com.pearson.ed.ltg.piam</groupId>
+            <artifactId>encryption</artifactId>
+            <version>${pi.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <scope>test</scope>
+	     </dependency>
+        <dependency>
+    	  	<groupId>com.nimbusds</groupId>
+    		<artifactId>oauth2-oidc-sdk</artifactId>
+		</dependency>
+        <dependency>
+    	  	<groupId>com.nimbusds</groupId>
+    		<artifactId>nimbus-jose-jwt</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-easymock</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

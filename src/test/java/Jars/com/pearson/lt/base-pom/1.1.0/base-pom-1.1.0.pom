@@ -1,0 +1,115 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.pearson.lt</groupId>
+    <artifactId>base-pom</artifactId>
+    <version>1.1.0</version>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+    <organization>
+        <name>Pearson Learning Technologies</name>
+        <url>https://hub.pearson.com/confluence/display/LTGE/Home</url>
+    </organization>
+
+    <properties>
+        <!--
+        To use this POM, you will need to have a properly-configured Maven 
+        settings.xml file. There are several options for accessing or creating 
+        this file:
+
+        OPTION 1: Execute your build on a SETS CI Jenkins Server. Each server 
+        is configured with a settings.xml file which meets the requirements for 
+        using this POM.
+
+        OPTION 2: Obtain a copy of the Pearson Developer Workstation 
+        settings.xml file. You will need to edit this file and replace the 
+        <username> and <password> values located in the <server> entry named, 
+        "LT-Nexus-Dependencies" with your own username and password for 
+        the Pearson Nexus server.
+        -->
+
+        <!--
+        Default values for the following properties will be overridden by a 
+        properly-configured Maven settings.xml file that has been configured 
+        for either a CI build server or for a developer's workstation.
+        -->
+        <buildEnvName>Developer Workstation</buildEnvName>
+        <ciUrl>http://localhost/view</ciUrl>
+        <nexusCommonRepoHost>developer.workstation.local</nexusCommonRepoHost>
+
+        <nexusReleaseRepoId>LT-Nexus-Releases</nexusReleaseRepoId>
+        <nexusReleaseRepoName>Pearson LT - ${buildEnvName} Build Environment - Nexus Release Repository</nexusReleaseRepoName>
+        <nexusReleaseRepoUrlPrefix>http://</nexusReleaseRepoUrlPrefix>
+        <nexusReleaseRepoHost>${nexusCommonRepoHost}</nexusReleaseRepoHost>
+        <nexusReleaseRepoPath>/nexus/content/repositories/releases</nexusReleaseRepoPath>
+
+        <nexusSnapshotRepoId>LT-Nexus-Snapshots</nexusSnapshotRepoId>
+        <nexusSnapshotRepoName>Pearson LT - ${buildEnvName} Build Environment - Nexus Snapshot Repository</nexusSnapshotRepoName>
+        <nexusSnapshotRepoUrlPrefix>http://</nexusSnapshotRepoUrlPrefix>
+        <nexusSnapshotRepoHost>${nexusCommonRepoHost}</nexusSnapshotRepoHost>
+        <nexusSnapshotRepoPath>/nexus/content/repositories/snapshots</nexusSnapshotRepoPath>
+    </properties>
+
+    <scm>
+        <connection>scm:svn:http://subversion.pearsoncmg.com/data/sqedev/Release_Engineering/tags/base-pom-1.1.0</connection>
+        <developerConnection>scm:svn:http://subversion.pearsoncmg.com/data/sqedev/Release_Engineering/tags/base-pom-1.1.0</developerConnection>
+        <url>http://fisheye.pearsoncmg.com/browse/SQE_Dashboard/Release_Engineering/tags/base-pom-1.1.0</url>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <!--
+                These are placeholders; the values for siteId and siteUrl should be
+                defined in a child POM.
+            -->
+            <id>${siteId}</id>
+            <url>${siteUrl}</url>
+        </site>
+        <repository>
+            <id>${nexusReleaseRepoId}</id>
+            <name>${nexusReleaseRepoName}</name>
+            <url>${nexusReleaseRepoUrlPrefix}${nexusReleaseRepoHost}${nexusReleaseRepoPath}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${nexusSnapshotRepoId}</id>
+            <name>${nexusSnapshotRepoName}</name>
+            <url>${nexusSnapshotRepoUrlPrefix}${nexusSnapshotRepoHost}${nexusSnapshotRepoPath}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-http</artifactId>
+                <version>2.1</version>
+            </extension>
+        </extensions>
+    </build>
+
+    <profiles>
+        <profile>
+            <!--
+                To deploy an artifact to the thirdparty repository instead of the
+                standard snapshot or release repositories, activate this profile
+                using -Pthirdparty-artifact.
+            -->
+            <id>thirdparty-artifact</id>
+            <properties>
+                <nexusReleaseRepoId>LT-Nexus-Thirdparty</nexusReleaseRepoId>
+                <nexusReleaseRepoName>Pearson LT - ${buildEnvName} Build Enviroment - Nexus Third-Party Release Repository</nexusReleaseRepoName>
+                <nexusReleaseRepoUrlPrefix>http://</nexusReleaseRepoUrlPrefix>
+                <nexusReleaseRepoHost>${nexusCommonRepoHost}</nexusReleaseRepoHost>
+                <nexusReleaseRepoPath>/nexus/content/repositories/thirdparty</nexusReleaseRepoPath>
+
+                <nexusSnapshotRepoId>LT-Nexus-Thirdparty</nexusSnapshotRepoId>
+                <nexusSnapshotRepoName>Pearson LT - ${buildEnvName} Build Enviroment - Nexus Third-Party Snapshot Repository</nexusSnapshotRepoName>
+                <nexusSnapshotRepoUrlPrefix>http://</nexusSnapshotRepoUrlPrefix>
+                <nexusSnapshotRepoHost>${nexusCommonRepoHost}</nexusSnapshotRepoHost>
+                <nexusSnapshotRepoPath>/nexus/content/repositories/thirdparty</nexusSnapshotRepoPath>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>
